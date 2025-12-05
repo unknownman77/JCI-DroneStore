@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JCI — Products</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/products.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="JCI home">
+        <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+        <!-- <span class="brand">JCI</span> -->
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link active">Products</a></li>
+          <li><a href="forum.html" class="nav-link">Forum</a></li>
+          <li><a href="store.html" class="nav-link">Store</a></li>
+          <li><a href="contact.html" class="nav-link cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="products-hero">
+      <h1>Our Drones</h1>
+      <p>From prosumer agility to enterprise-grade systems — find the right SkyVision for your mission.</p>
+    </section>
+
+    <section class="filters">
+      <div class="chips" role="tablist" aria-label="Product categories">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="pro">Pro</button>
+        <button class="chip" data-filter="prosumer">Prosumer</button>
+        <button class="chip" data-filter="mini">Mini</button>
+        <button class="chip" data-filter="enterprise">Enterprise</button>
+        <button class="chip" data-filter="case">Case</button>
+      </div>
+    </section>
+
+    <section class="products-grid" id="productsGrid" aria-live="polite">
+      <!-- populated by js/products.js -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="logo" href="index.html" aria-label="JCI home">
+          <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+          <span class="brand">JCI</span>
+        </a>
+        <p class="muted">© <span id="year2"></span> JCI. All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="store.html">Buy</a></li>
+          <li><a href="forum.html">Community</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

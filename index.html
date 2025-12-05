@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JCI — Elevating Vision</title>
+  <link rel="icon" href="assets/icons/logo.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/products.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="JCI home">
+        <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+        <!-- <span class="brand">JCI</span> -->
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="forum.html" class="nav-link">Forum</a></li>
+          <li><a href="store.html" class="nav-link">Store</a></li>
+          <li><a href="contact.html" class="nav-link cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-media">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
+          <source src="assets/videos/skyvision-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-content container">
+        <h1 class="hero-title">Elevating Vision. <br>Redefining Flight.</h1>
+        <p class="hero-sub">JCI builds high-performance drones and camera systems for filmmakers, first responders, and creators worldwide.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="products.html">Explore Products</a>
+          <a class="btn ghost" href="store.html">Where to Buy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision / Awards -->
+    <section class="container vision-awards">
+      <div class="vision">
+        <h2>Our Vision</h2>
+        <p>To be the global standard for safe, cinematic, and reliable aerial imaging — enabling new perspectives for film, science, and rescue.</p>
+        <div class="values-grid">
+          <div class="value-card">
+            <img src="assets/icons/innovation.png" alt="" aria-hidden="true">
+            <h3>Innovation</h3>
+            <p>Cutting-edge sensors, stabilization, and autonomy.</p>
+          </div>
+          <div class="value-card">
+            <img src="assets/icons/reliability.png" alt="" aria-hidden="true">
+            <h3>Reliability</h3>
+            <p>Rugged hardware and dependable software for mission-critical use.</p>
+          </div>
+          <div class="value-card">
+            <img src="assets/icons/safety.png" alt="" aria-hidden="true">
+            <h3>Safety</h3>
+            <p>Advanced obstacle avoidance and privacy-aware data handling.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="awards">
+        <h2>Recognition</h2>
+        <div class="awards-row">
+          <img src="assets/icons/award-1.png" alt="Innovation award 2024">
+          <img src="assets/icons/award-2.png" alt="Design award 2023">
+          <img src="assets/icons/award-3.png" alt="Rescue tech award 2022">
+        </div>
+      </aside>
+    </section>
+
+    <!-- Showcase gallery -->
+    <section class="container showcase">
+      <!-- <h2>Showcase</h2> -->
+      <div class="showcase-grid" id="showcaseGrid" aria-live="polite">
+        <!-- populated by products.js for demo images -->
+      </div>
+    </section>
+
+    <!-- Expertise -->
+    <section class="container expertise">
+      <h2>Fields of Expertise</h2>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <h3>Cinematography</h3>
+          <p>8K stabilized imaging for film and documentary production.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>Search & Rescue</h3>
+          <p>Long-range flight and thermal imaging for emergency response.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>Mapping & Survey</h3>
+          <p>High-precision sensors for mapping and inspection.</p>
+        </div>
+        <div class="expertise-card">
+          <h3>Sports Coverage</h3>
+          <p>Fast, agile platforms for dynamic event capture.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="logo" href="index.html" aria-label="JCI home">
+          <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+          <span class="brand">JCI</span>
+        </a>
+        <p class="muted">© <span id="year"></span> JCI. All rights reserved.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">SkyVision X7</a></li>
+          <li><a href="products.html">SkyVision Mini</a></li>
+          <li><a href="products.html">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="forum.html">Community Forum</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get the App</h4>
+        <div class="app-links">
+          <a class="app-btn" href="#" aria-label="Download on Google Play">Google Play</a>
+          <a class="app-btn" href="#" aria-label="Download on App Store">App Store</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

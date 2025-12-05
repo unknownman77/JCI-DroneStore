@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JCI — Store</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="JCI home">
+        <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+        <!-- <span class="brand">JCI</span> -->
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="forum.html" class="nav-link">Forum</a></li>
+          <li><a href="store.html" class="nav-link active">Store</a></li>
+          <li><a href="contact.html" class="nav-link cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container store-page">
+    <section class="store-hero">
+      <h1>Where to Buy</h1>
+      <p>Purchase JCI products through our official app, our store, or trusted retail partners.</p>
+    </section>
+
+    <section class="store-grid">
+      <div class="store-card">
+        <h3>Official App</h3>
+        <p>Download the JCI app for device setup, firmware updates, and purchases.</p>
+        <div class="app-links">
+          <a class="app-btn" href="#" aria-label="Download on Google Play">Google Play</a>
+          <a class="app-btn" href="#" aria-label="Download on App Store">App Store</a>
+        </div>
+      </div>
+
+      <div class="store-card">
+        <h3>Official JCI Store</h3>
+        <p>Buy directly from our online store for warranty and official accessories.</p>
+        <a class="btn primary" href="#">Visit Store</a>
+      </div>
+
+      <div class="store-card">
+        <h3>Retail Partners</h3>
+        <p>Available at Tokopedia, Shopee, and Ebay.</p>
+        <div class="retail-logos">
+          <img src="assets/icons/tokopedia.png" alt="Tokopedia">
+          <img src="assets/icons/shopee.png" alt="Shopee" class="Shopee">
+          <img src="assets/icons/ebay.png" alt="eBay">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="logo" href="index.html" aria-label="JCI home">
+          <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+          <span class="brand">JCI</span>
+        </a>
+        <p class="muted">© <span id="year4"></span> JCI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JCI — Forum</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/main.js"></script>
+  <script defer src="js/forum.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="JCI home">
+        <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+        <!-- <span class="brand">JCI</span> -->
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="forum.html" class="nav-link active">Forum</a></li>
+          <li><a href="store.html" class="nav-link">Store</a></li>
+          <li><a href="contact.html" class="nav-link cta">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="forum.html">Forum</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container forum-page">
+    <section class="forum-header">
+      <h1>Community Forum</h1>
+      <p>Discussions from JCI representatives and verified users.</p>
+      <div class="forum-controls">
+        <input id="forumSearch" type="search" placeholder="Search posts..." aria-label="Search posts">
+        <select id="forumSort" aria-label="Sort posts">
+          <option value="hot">Hot</option>
+          <option value="new">New</option>
+          <option value="likes">Most Liked</option>
+        </select>
+      </div>
+      
+    </section>
+
+    <section class="forum-layout">
+      <aside class="forum-sidebar" aria-label="Categories">
+        <h3>Categories</h3>
+        <ul id="categoryList">
+          <li><button class="category active" data-cat="all">All</button></li>
+          <li><button class="category" data-cat="firmware">Firmware</button></li>
+          <li><button class="category" data-cat="tips">Tips</button></li>
+          <li><button class="category" data-cat="missions">Missions</button></li>
+          <li><button class="category" data-cat="repairs">Repairs</button></li>
+        </ul>
+      </aside>
+
+      <section class="forum-list" id="forumList" aria-live="polite">
+        <!-- populated by js/forum.js -->
+      </section>
+      <!-- New Post form placed below posts and always visible -->
+      <form id="newPostForm" class="contact-form new-post-form" style="margin-top:14px;" novalidate>
+        <div class="form-row">
+          <label for="postUser">Your name</label>
+          <input id="postUser" name="postUser" type="text" required placeholder="e.g. pilot_anna" />
+        </div>
+        <div class="form-row">
+          <label for="postTitle">Title</label>
+          <input id="postTitle" name="postTitle" type="text" required placeholder="Short, descriptive title" />
+        </div>
+        <div class="form-row">
+          <label for="postCategory">Category</label>
+          <select id="postCategory" name="postCategory" required>
+            <option value="firmware">Firmware</option>
+            <option value="tips">Tips</option>
+            <option value="missions">Missions</option>
+            <option value="repairs">Repairs</option>
+            <option value="general">General</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="postDesc">Message</label>
+          <textarea id="postDesc" name="postDesc" rows="6" required placeholder="Share your question or experience"></textarea>
+        </div>
+        <div class="form-row">
+          <button class="btn primary" type="submit">Publish</button>
+          <button class="btn ghost" type="button" id="cancelPost">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a class="logo" href="index.html" aria-label="JCI home">
+          <img src="assets/icons/logo.png" alt="JCI logo" class="logo-img">
+          <span class="brand">JCI</span>
+        </a>
+        <p class="muted">© <span id="year3"></span> JCI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
