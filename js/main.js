@@ -1,12 +1,10 @@
-// main.js - global behaviors: menu, footer year, contact form validation, accessibility helpers
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Set footer years
+  // set footer years
   const years = document.querySelectorAll('#year, #year2, #year3, #year4, #year5');
   const y = new Date().getFullYear();
   years.forEach(el => { if (el) el.textContent = y; });
 
-  // Mobile menu toggle
+  // mobile menu toggle
   const toggles = document.querySelectorAll('.menu-toggle');
   toggles.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -23,18 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Keyboard accessible focus styles for links
+  // keyboard accessible focus styles for links
   document.body.addEventListener('keyup', (e) => {
     if (e.key === 'Tab') {
       document.documentElement.classList.add('user-is-tabbing');
     }
   });
 
-  // Contact form validation attachment
+  // contact form validation attachment
   attachContactValidation();
 });
 
-// Contact form validation (no regex)
+// contact form validation (no regex)
 function attachContactValidation() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -156,7 +154,7 @@ function attachContactValidation() {
       return;
     }
 
-    // Simulate sending data (replace with real endpoint)
+    // simulate sending data (replace with real endpoint)
     const payload = {
       name: nameInput.value.trim(),
       phone: phoneInput.value.trim(),
@@ -165,7 +163,7 @@ function attachContactValidation() {
       message: messageInput.value.trim()
     };
 
-    // Use fetch to a demo endpoint (this will fail locally unless you provide an endpoint)
+    // use fetch to a demo endpoint (this will fail locally unless you provide an endpoint)
     fetch('/api/contact', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},

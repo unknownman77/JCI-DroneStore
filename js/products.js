@@ -1,5 +1,3 @@
-// products.js - populates products and showcase demo content, uses localStorage for last category
-
 const PRODUCTS = [
   {
     id: 'x7',
@@ -8,7 +6,8 @@ const PRODUCTS = [
     desc: '8K stabilized camera, 40 min flight, advanced obstacle avoidance.',
     img: 'assets/images/x7.png',
     highlights: ['8K', '40 min', 'Obstacle Avoidance'],
-    price: '$7,999'
+    price: '$7,999',
+    rating: 4.8
   },
   {
     id: 'x5',
@@ -17,7 +16,8 @@ const PRODUCTS = [
     desc: 'High-quality 4K capture for prosumers and indie filmmakers.',
     img: 'assets/images/x5.png',
     highlights: ['4K', '30 min', 'Compact'],
-    price: '$3,499'
+    price: '$3,499',
+    rating: 4.6
   },
   {
     id: 'mini',
@@ -26,7 +26,8 @@ const PRODUCTS = [
     desc: 'Lightweight and portable for quick aerial shots.',
     img: 'assets/images/mini.png',
     highlights: ['HD', '20 min', 'Foldable'],
-    price: '$999'
+    price: '$999',
+    rating: 4.5
   },
   {
     id: 'enterprise',
@@ -35,7 +36,8 @@ const PRODUCTS = [
     desc: 'Long-range, heavy-lift platform for mapping and inspections.',
     img: 'assets/images/enterprise.png',
     highlights: ['Mapping', 'Long-range', 'Payload'],
-    price: '$14,999'
+    price: '$14,999',
+    rating: 4.9
   },
   {
     id: 'accessory',
@@ -44,7 +46,8 @@ const PRODUCTS = [
     desc: 'Precision gimbal and lens kit for cinematic stabilization.',
     img: 'assets/images/gimbal.png',
     highlights: ['Gimbal', 'Lens', 'Accessory'],
-    price: '$499'
+    price: '$499',
+    rating: 4.7
   },
   {
     id: 'case',
@@ -53,7 +56,8 @@ const PRODUCTS = [
     desc: 'Rugged, weather-resistant carrying case sized for SkyVision drones and accessories.',
     img: 'assets/images/case.png',
     highlights: ['Rugged', 'Weather-resistant', 'Foam Insert'],
-    price: '$149'
+    price: '$149',
+    rating: 4.3
   }
 ];
 
@@ -72,12 +76,13 @@ function renderProducts(filter) {
     const card = document.createElement('article');
     card.className = 'card';
     card.innerHTML = `
-      <img src="${p.img}" alt="${p.name}" style="width:100%;height:180px;object-fit:cover">
+      <img class="product-img" src="${p.img}" alt="${p.name}">
       <div class="card-body">
         <h3>${p.name}</h3>
+        <div class="product-rating">${renderStars(p.rating)} <span class="rating-num">(${p.rating ? p.rating.toFixed(1) : '0.0'})</span></div>
         <p>${p.desc}</p>
         <div class="specs">${p.highlights.join(' • ')}</div>
-        <div style="margin-top:12px">
+        <div class="card-actions">
           <a class="btn primary" href="store.html?product=${p.id}">Buy</a>
           <button class="btn" data-id="${p.id}" aria-label="Quick view ${p.name}">Quick view</button>
         </div>
@@ -98,7 +103,15 @@ function renderProducts(filter) {
   });
 }
 
-// Quick View modal helpers
+// Render star icons (simple full/empty stars using Unicode)
+function renderStars(rating){
+  const r = Math.round(rating || 0);
+  let stars = '';
+  for(let i=0;i<5;i++) stars += i < r ? '★' : '☆';
+  return `<span class="rating-stars">${stars}</span>`;
+}
+
+// quick View modal helpers
 function ensureQuickViewModal() {
   if (document.getElementById('quickViewModal')) return;
   const modal = document.createElement('div');
@@ -172,7 +185,7 @@ function renderShowcase() {
   if (!showcase) return;
   showcase.innerHTML = '';
 
-  // Single rotating showcase: one large image + caption that cycles through PRODUCTS
+  // single rotating showcase: one large image + caption that cycles through PRODUCTS
   const container = document.createElement('div');
   container.className = 'showcase-single card';
 
@@ -253,12 +266,13 @@ function renderShowcase() {
 }
 
 function attachFilterHandlers() {
-  const chips = document.querySelectorAll('.chip');
-  chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      chips.forEach(c => c.classList.remove('active'));
-      chip.classList.add('active');
-      const filter = chip.getAttribute('data-filter');
+  // support both top chips and sidebar category buttons
+  const controls = document.querySelectorAll('.chip, .category-btn');
+  controls.forEach(ctrl => {
+    ctrl.addEventListener('click', () => {
+      controls.forEach(c => c.classList.remove('active'));
+      ctrl.classList.add('active');
+      const filter = ctrl.getAttribute('data-filter');
       localStorage.setItem('jci-last-filter', filter);
       renderProducts(filter);
     });
@@ -266,9 +280,9 @@ function attachFilterHandlers() {
 
   // restore last filter
   const last = localStorage.getItem('jci-last-filter') || 'all';
-  const activeChip = document.querySelector(`.chip[data-filter="${last}"]`);
-  if (activeChip) {
-    activeChip.classList.add('active');
+  const activeControl = document.querySelector(`.chip[data-filter="${last}"]`) || document.querySelector(`.category-btn[data-filter="${last}"]`);
+  if (activeControl) {
+    activeControl.classList.add('active');
     renderProducts(last);
   }
 }

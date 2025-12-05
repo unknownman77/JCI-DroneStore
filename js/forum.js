@@ -1,5 +1,3 @@
-// forum.js - demo forum posts rendering, search and category filtering, uses DOM manipulation and event listeners
-
 let POSTS = [
   {
     id: 1,
@@ -170,7 +168,7 @@ function attachForumHandlers() {
       if (val === 'hot') {
         sorted.sort((a,b) => (b.views + b.likes*2 + b.shares*3) - (a.views + a.likes*2 + a.shares*3));
       } else if (val === 'new') {
-        sorted = sorted.reverse(); // demo only
+        sorted = sorted.reverse();
       } else if (val === 'likes') {
         sorted.sort((a,b) => b.likes - a.likes);
       }
